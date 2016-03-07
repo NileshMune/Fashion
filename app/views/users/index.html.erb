@@ -1,0 +1,22 @@
+<h2 align="center"> All Users </h2>
+
+  <% @users.each do |user| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        
+        <div class="user-title">
+          <%= user.name %>
+        </div>
+        
+        <div class="user-details">
+          <%= user.area %>
+        </div>
+    
+        <%= link_to 'Edit', edit_user_path(user), class:'btn btn-xs btn-primary' %>
+        <%= link_to 'Delete', user_path(user), method: :delete, data:{confirm:"sure ?"}, class:'btn btn-xs btn-primary' %>
+    
+      </div>
+    </div>
+  </div>
+  <% end %>
